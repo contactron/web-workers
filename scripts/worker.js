@@ -20,7 +20,7 @@ this.onmessage = function(e) {
       imageData.data[i * 4 + 3] = pixel[3];
     }
     // post to console
-    console.log('Working posting message back to main script');
+    console.log('Working posting message back to main script');y
     postMessage(imageData);
   } catch (e) {
     function ManipulationException(message) {

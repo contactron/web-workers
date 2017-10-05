@@ -44,7 +44,7 @@
     // receive messages from the web worker.
 
     // Spawn the worker
-    var myWorker = new Worker('worker.js');
+    var myWorker = new Worker('scripts/worker.js');
 
     // Call the worker, send the image data
     myWorker.postMessage(imageData);
@@ -66,7 +66,7 @@
     // }
 
     // Receive manipulated data back from the Worker
-    myWorker.onmessage() = function(imageData) {
+    myWorker.onmessage = function(imageData) {
       return ctx.putImageData(imageData, 0, 0);
       // log to console
       console.log('Message received from Worker');
