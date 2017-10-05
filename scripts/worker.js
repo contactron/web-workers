@@ -3,6 +3,8 @@ importScripts('imageManips.js');
 this.onmessage = function(e) {
   var imageData = e.data.imageData;
   var type = e.data.type;
+  // post to console
+  console.log('Worker received imaged data');
 
   try {
     length = imageData.data.length / 4;
@@ -17,6 +19,8 @@ this.onmessage = function(e) {
       imageData.data[i * 4 + 2] = pixel[2];
       imageData.data[i * 4 + 3] = pixel[3];
     }
+    // post to console
+    console.log('Working posting message back to main script');
     postMessage(imageData);
   } catch (e) {
     function ManipulationException(message) {
